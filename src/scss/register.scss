@@ -1,0 +1,172 @@
+@import"./component/style.scss";
+@import"./component/header.scss";
+@import"./component/footer.scss";
+.register{
+    width:100%;
+    height: 1025px;
+    .register_main{
+        width: 1100px;
+        height: 1025px;
+        margin: 0 auto;
+        
+        .register_main_top{
+            width: 1100px;
+            height: 259px;
+           
+            .register_main_top_ul{
+                width: 930px;
+                height: 221px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+               li{
+                   margin-right: 10px;
+                   position: relative;
+                   .register_main_top_ul_p1{
+                       width: 158px;
+                       height: 37px;
+                       background-color: #aeb0b3;
+                       position: absolute;
+                       top:12px;
+                       right:0;
+                       line-height: 37px;
+                       font-size: 14px;
+                       text-align: center;
+                       color: #fff;
+
+                   }
+                   .register_main_top_ul_p2{
+                       width: 52px;
+                       height: 52px;
+                       background:url(/static/img/start_product_01.png) no-repeat center;
+                       line-height: 52px;
+                       font-size: 39px;
+                       overflow: hidden;
+                       position: absolute;
+                       top: 5px;
+                       left:6px;
+                       text-align: center;
+                       color: #fff;
+                       -webkit-margin-before: 0em;  -webkit-margin-after: 0em;
+                   }
+               }
+            }
+        }
+        .register_main_bottom{
+            width: 1100px;
+            height: 766px;
+            .register_main_bottom_left{
+                width: 425px;
+                height: 314px;
+                border:1px solid#ccc;
+                float: left;
+                margin-right: 30px;
+                h3{
+                    width: 100%;
+                    padding-top: 38px;
+                    line-height: 18px;
+                    text-align: center;
+                    font-size: 18px;
+                    overflow: hidden;
+                    font-weight: normal;
+                    -webkit-margin-before: 0em;  -webkit-margin-after: 0em;
+                }
+                p{
+                    width: 100%;
+                    line-height: 44px;
+                    font-size: 14px;
+                    text-align: center;
+                }
+                .left_input_field{
+                    display: block;
+                    width: 165px;
+                    height: 24px;
+                    padding-left: 3px;
+                    margin: 0 auto;
+                    border: 1px solid #ccc;
+                    color: #666;
+                    line-height: 24px;
+                    margin-top: 10px;
+                }
+                .forget_password{
+                    display: block;
+                    width: 168px;
+                    margin: 0 auto;
+                    text-align: left;
+                    line-height: 24px;
+                    margin-top: 10px;
+                    a{
+                        font-size: 12px;
+                        color: #000;
+                        
+                    }
+                }
+                .register_check{
+                    text-align: center;
+                    margin: 10px 0;
+                    font-size: 12px;
+                }
+                #re_login_btn{
+                    display: block;
+                    width: 86px;
+                    height: 29px;
+                    background: #9e1503;
+                    border: 0;
+                    margin: 0 auto;
+                    cursor: pointer;
+                    text-align: center;
+                    color: #fff;
+                    line-height: 29px;
+                    // overflow: hidden;
+                    // margin-bottom: 25px;
+                }
+            }
+            .register_main_bottom_right{
+                width: 525px;
+                height: 771px;
+                border:1px solid#ccc;
+                float: left;
+            }
+                h3{
+                    width: 100%;
+                    padding-top: 38px;
+                    line-height: 18px;
+                    text-align: center;
+                    font-size: 18px;
+                    overflow: hidden;
+                    font-weight: normal;
+                    -webkit-margin-before: 0em;  -webkit-margin-after: 0em;
+                }
+                p{
+                    width: 100%;
+                    line-height: 44px;
+                    font-size: 14px;
+                    text-align: center;
+                }
+                .right_input_field{
+                    display: block;
+                    width: 165px;
+                    height: 24px;
+                    padding-left: 3px;
+                    margin: 0 auto;
+                    border: 1px solid #ccc;
+                    color: #666;
+                    line-height: 24px;
+                    margin-top: 10px;
+                    margin-bottom: 22px;
+            }
+            #password_2{
+                margin-bottom: 10px;
+            }
+            span{
+                display: block;
+                width: 100%;
+                line-height: 22px;
+                font-size: 12px;
+                text-align: center;
+                color: #9d1c32;
+                font-style: italic;
+            }
+        }
+    }
+}
