@@ -1,0 +1,19 @@
+<!-- 将item作为模板进行页面渲染 -->
+<!-- 利用template -->
+<div class="list_item">
+        <script type="text/html" id="list-template">
+            <!-- 用来遍历循环 -->
+            {{each list item i}}
+            <div class="item">
+                    <div class="img">
+                        <a href="/html/detail.html?id={{item.id}}"><img src="{{item.img}}"></a>
+                    </div>
+                    <p class="product_title">{{item.title}}</p>
+                    <p class="rroduct_capacity">{{item.capacity}}</p>
+                    <p class="product_price">￥{{item.price}}</p>
+                    <div class="add_chart">加入购物车</div>
+                    <div class="detail"><a href="/html/detail.html?id={{item.id}}">详情</a></div>   
+                </div>
+                {{/each}}
+        </script>
+</div>

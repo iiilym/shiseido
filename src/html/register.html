@@ -44,7 +44,7 @@
             </div>
             <div class="register_main_bottom">
                 <div class="register_main_bottom_left">
-                        <form>
+                        <form id="form_login">
                             <h3>已经是会员</h3>
                             <p>马上登录获得更多会员资讯</p>
                             <input type="text" name="username" id="username_1" placeholder="手机号码/电子邮箱" class="left_input_field">
@@ -55,13 +55,45 @@
                         </form>
                 </div>
                 <div class="register_main_bottom_right">
-                        <form>
+                        <form id="form_register">
                                 <h3>加入会员</h3>
                                 <p>成为资生堂花庄会员，体验各种为您量身定制的奢享礼遇</p>
-                                <input type="email" name="email" id="username_2" placeholder="电子邮箱" class="right_input_field">
-                                <input type="password" name="password" id="password_2" placeholder="密码" class="right_input_field">
+                                <input type="email" name="email" id="email" placeholder="电子邮箱" class="right_input_field">
+                                <input type="password" name="password" id="password" placeholder="密码" class="right_input_field">
                                 <span>密码必须是6位以上字母和数字组成，可以包含符号。 </span>
                                 <input type="password" name="password" id="password_3" placeholder="再次输入密码" class="right_input_field">
+                                <p class="block_password">显示密码</p>
+                                <input type="text" placeholder="图形验证码" class="right_input_field" id="vcode_text">
+                                <p class="vcode"><img src="/static/img/vcode.png"><a href="javascript:;" class="vcode_a">&nbsp;看不清楚？换一张</a></p>
+                                <input type="text" placeholder="手机" class="right_input_field" id="phone">
+                                <div class="verification_code"><input type="text" placeholder="验证码" class="verification_code_text"><a href="javascript:;" class="vcode_a">&nbsp;&nbsp;发送验证码</a></div>
+                                <input type="text" placeholder="姓名" class="right_input_field" id="username">
+                                <span class="tips">(出生年月一旦保存后不能修改、请妥善填写。) </span>
+                                <div class="gender_box">
+                                    <span class="gender">性别:&nbsp;</span>
+                                    <input type="radio"  checked="checked" />
+                                    女性
+                                    <input type="radio" />
+                                    男性
+                                </div>
+                                <div class="check_box">
+                                        <span class="take">电子快报:&nbsp;</span>
+                                        <input type="radio"  checked="checked" />
+                                        订阅
+                                        <input type="radio" />
+                                        不订阅
+                                    </div>
+                               
+                                <div class="register_main_bottom_right_bottom">
+                                    <label>
+                                        <div class="re_recept"><input type="checkbox" class="re_1"/><span class="re_2">我已阅读并接受了</span><a href="javascript:;" class="re_3">隐私保护条款。</a></div>
+                                        <div class="re_bottom_big">
+                                                <button id="re_bottom_btn_1">身份绑定</button>
+                                                <button id="re_bottom_btn_2">注册</button>
+                                        </div>
+                                    </label>
+                                   
+                                </div>
                         </form>
                 </div>
             </div>
