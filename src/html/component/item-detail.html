@@ -1,0 +1,19 @@
+<script type="text/html" id="item-detail-template">
+    <div class="dl"> 
+    {{each list item i}} 
+    <dl>
+        <dt> <a href="/html/detail.html?id={{item.id}}"><img src="{{item.img}}"/></a></dt>
+        <dd>
+            <a href="/html/detail.html?id={{item.id}}">{{item.title}}</a>
+            {{if item.capacity}}
+            <span>{{item.capacity}}</span>
+            {{/if}}
+            {{if item.price}}
+            <span class="money">￥{{item.price}}</span>
+            {{/if}}
+            <a href="/html/detail.html?id={{item.id}}" class="btn">查看详情</a>
+        </dd>
+    </dl>
+    {{/each}}
+    </div>
+    </script>

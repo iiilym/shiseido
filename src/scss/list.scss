@@ -271,11 +271,11 @@
                     width: 842px;
                     height: 2785px;
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: flex-start;
                     flex-wrap: wrap;
                     .item{
                         width: 280px;
-                        height: 462px;
+                        height: 440px;
                         text-align: center;
                         display: flex;
                         flex-direction: column;
@@ -312,5 +312,79 @@
             }
         }
         
+    }
+}
+#fixDiv{
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    z-index: 99999;
+    display: block;
+    width: 64px;
+    height: 319px;
+    background-color: white;
+    #fixUl{
+        box-shadow: -2px 2px 10px #ccc;
+        width: 64px;
+        height: 319px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        li{
+            display: block;
+            width: 64px;
+            height: 75px;
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+            font-size: 15px;
+            .a{
+                padding: 15px 0px;
+                text-align: center;
+                cursor: pointer;
+                margin: 0 10px;
+                display: block;
+                width: 44px;
+                border-bottom: 1px solid #999;
+                color: #000000;
+            }.a2{
+                border: none;
+            }
+            
+        }
+        #toTop{
+            background-color: #000000;
+            .a4{
+                border: none;
+                // .toTop_img{
+                //     display: block;
+                //     height: 8px;
+                //     width: 24px;
+                //     vertical-align: middle;
+                // }
+            }
+        }
+        .li3{
+            line-height: 30px;
+            height: 98px;
+            background-color: #d00813;
+            background-image: url(/static/img/ChatIcon.png);
+            background-repeat: no-repeat;
+            background-position:center 8px;
+            .p{
+                padding: 22px 0px;
+                text-align: center;
+                cursor: pointer;
+                margin: 0 1px;
+                display: block;
+                width: 44px;
+                color: #fff;
+                line-height: 20px;
+            }
+            .a3{
+                border: none;
+            }
+        }
     }
 }

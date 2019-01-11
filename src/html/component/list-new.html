@@ -1,0 +1,26 @@
+<!-- <div class="dl"> -->
+    <script type="text/html" id="index-template">
+    <div class="dl"> 
+    {{each list item i}} 
+    <dl>
+        <dt class="chartImg"> <a href="/html/detail.html?id={{item.id}}"><img src="{{item.img}}"/></a></dt>
+        <dd>
+            <a href="/html/detail.html?id={{item.id}}" class="chartTitle">{{item.title}}</a>
+            {{if item.capacity}}
+            <span>{{item.capacity}}</span>
+            {{/if}}
+            {{if item.price}}
+            <span class="money chartPrice">￥{{item.price}}</span>
+            {{/if}}
+            <a href="javascript:;" class="btn addChart">加入购物车</a>
+        </dd>
+    </dl>
+    {{/each}}
+    </div>
+    </script>
+<!-- </div> -->
+
+<!-- {{if item.sPrice}}
+			<p>item.sPrice</p>
+			{{/if}} -->
+    

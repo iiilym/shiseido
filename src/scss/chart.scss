@@ -1,0 +1,365 @@
+@import"./component/style.scss";
+@import"./component/minheader.scss";
+@import"./component/footer.scss";
+.chart{
+    width: 100%;
+    height: auto;
+    .chart_container{
+        width: 980px;
+        height: auto;
+        margin: 0 auto;
+        // background-color: bisque;
+        .chart_container_top_nav{
+            width: 980px;
+            margin: 0 auto;
+            .chart_nav{
+                width: 750px;
+                height: 50px;
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                // background-color: red;
+                #bc_color{
+                    background: #ba2620;
+                }
+                .chart_nav_li{
+                    background: #a7a9ac;
+                    margin: 0 5px 0 0;
+                    padding: 0;
+                    width: 163px;
+                    height: 40px;
+                    text-align: center;
+                    line-height: 40px;
+                    font-size: 14px;
+                    color: #fff;
+                    .chart_nav_li_a{
+                        color: #fff;
+                    }
+                }
+                
+                .span{
+                    // display: block;
+                    // width: 15px;
+                    // height: 16px;
+                    // position: absolute;
+                    // top: 1px;
+                    // left: 5px;
+                    // background: url(/static/img/home_105.jpg) no-repeat center;
+                    float: left;
+                    vertical-align: middle;
+                    margin-top: 11px;
+                    margin-right: 5px;
+                    width: 15px;
+                    height: 16px;
+                    background: url(/static/img/home_105.jpg) no-repeat;
+                }
+            }
+        }
+        .chart_main{
+            width: 980px;
+            margin: 0 auto;
+            height: auto;
+            padding-top: 20px;
+            .chart_main_top{
+                width: 980px;
+                height: auto;
+                table{
+                    width: 980px;
+                    height: auto;
+                    thead{
+                        width: 980px;
+                        height: 47px;
+                        color: #7c0d02;
+                        th{
+                            height: 36px;
+                            line-height: 36px;
+                            border-top: 1px solid #7c0d02;
+                            border-bottom: 4px solid #7c0d02;
+                            color: #670205;
+                            font-size: 16px;
+                            text-align: center;
+                        }
+                    }
+                    tbody{
+                        width: 980px;
+                        min-height: 60px;
+                    }
+                    tfoot{
+                        width: 980px;
+                        height: 70px;
+                        tr{
+                            
+                            display: flex;
+                            justify-content: space-between;
+                            align-self: center;
+                            td{
+                                font-size: 14px;
+                                color: #000;
+                                display: flex;
+                                justify-content: flex-end;
+                                align-self: center;
+                                vertical-align: middle;
+                                a{
+                                    display: block;
+                                                                
+                                    text-align: center; 
+                                    font-size: 14px;                              
+                                }
+                                .continueShopping{
+                                    line-height: 30px;
+                                    height: 30px;
+                                    width: 112px;
+                                    color: #ba291f;
+                                    background: #fff;
+                                    border: 1px solid #ba291f;
+                                   
+                                }
+                                .goPayment{
+                                    width: 114px;   
+                                    height: 32px;
+                                    line-height: 32px;
+                                   
+                                    color: #fff;
+                                    background: #7c0d02;
+                                    text-align: center;
+                                   
+                                   
+                                }
+                            }
+                            .tfoot_td2{
+                                text-align: right;
+                            }
+                        }
+
+                    }
+                }
+            }
+            .chart_main_middle{
+                width: 980px;
+                background: #eee;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .chart_bottom_a1{
+                    display: block;
+                    width: 316px;
+                    height: 36px;
+                    height: 100%;
+                    color: #851d13;
+                    line-height: 36px;
+                    font-size: 14px;
+                    float: left;
+                    padding-left: 3%;
+                    text-align: center;
+                    background: url(/static/img/icon_official.png) no-repeat 113px center;
+
+                }
+                .chart_bottom_a2{
+                    display: block;
+                    width: 316px;
+                    height: 36px;
+                    height: 100%;
+                    color: #851d13;
+                    line-height: 36px;
+                    font-size: 14px;
+                    float: left;
+                    padding-left: 3%;
+                    text-align: center;
+                    background: url(/static/img/icon_free.png) no-repeat 113px center;
+
+                }
+                .chart_bottom_a3{
+                    display: block;
+                    width: 316px;
+                    height: 36px;
+                    height: 100%;
+                    color: #851d13;
+                    line-height: 36px;
+                    font-size: 14px;
+                    float: left;
+                    padding-left: 3%;
+                    text-align: center;
+                    background: url(/static/img/icon_security.png) no-repeat 113px center;
+
+                }
+            }
+            .chart_main_bottom{
+                width: 980px;
+                height: 366px;
+                
+                margin-top: 36px;
+                .border{
+                    width: 980px;
+                    color: #7c0d02;
+                    border-bottom: 1px solid #7c0d02;
+                    border-top: 4px solid #7c0d02;
+                    padding-top: 19px;
+                    font-size: 14px;
+                    line-height: 30px;
+                    height: 30px;
+                    .span{
+                        height: 18px;
+                        width: 34px;
+                        float: right;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        .s_prev{
+                            display: block;
+                            width: 13px;
+                            height: 13px;
+                            background: url(/static/img/arrow.jpg) no-repeat;
+                        }
+                        .s_next{
+                            background: url(/static/img/next.jpg) no-repeat;
+                            display: block;
+                            width: 13px;
+                            height: 13px;
+                        }
+                    }
+                }
+                #seen_template{
+                    width: 980px;
+                    height: 292px;
+                    // background-color:#ba2620;
+                    margin-top: 28px;
+                    .dl{
+                        width: 973px;
+                        height:280px;
+                        margin: 0 auto;
+                        
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        
+                        dl{
+                            width: 973px;
+                            height:372px;
+                            margin: 0 auto;
+                            
+                            
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        // img{
+                        //     width: 253px;
+                        //     height: 187px;
+                            
+                        // }
+                        dd{
+                            height: 91px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-around;
+                            align-items: center;
+                            margin-top: 12px;
+                            a{
+                                display: block;
+                                font-size: 18px;
+                                height: 44px;
+                                line-height: 22px;
+                                color: #000000;
+                            }
+                            span{
+                                display: block;
+                                height: 25px;
+                                line-height: 25px;
+                                font-size: 14px;
+                            }
+                            .money{
+                                color: #670205;
+                            }
+                           .btn{
+                               width: 130px;
+                               height: 41px;
+                               background-color: #670205;
+                               text-align: center;
+                               line-height: 41px;
+                               font-size: 12px;
+                               color: #ffffff;
+                           }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+#fixDiv{
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    z-index: 99999;
+    display: block;
+    width: 64px;
+    height: 319px;
+    background-color: white;
+    #fixUl{
+        box-shadow: -2px 2px 10px #ccc;
+        width: 64px;
+        height: 319px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        li{
+            display: block;
+            width: 64px;
+            height: 75px;
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+            font-size: 15px;
+            .a{
+                padding: 15px 0px;
+                text-align: center;
+                cursor: pointer;
+                margin: 0 10px;
+                display: block;
+                width: 44px;
+                border-bottom: 1px solid #999;
+                color: #000000;
+            }.a2{
+                border: none;
+            }
+            
+        }
+        #toTop{
+            background-color: #000000;
+            .a4{
+                border: none;
+                // .toTop_img{
+                //     display: block;
+                //     height: 8px;
+                //     width: 24px;
+                //     vertical-align: middle;
+                // }
+            }
+        }
+        .li3{
+            line-height: 30px;
+            height: 98px;
+            background-color: #d00813;
+            background-image: url(/static/img/ChatIcon.png);
+            background-repeat: no-repeat;
+            background-position:center 8px;
+            .p{
+                padding: 22px 0px;
+                text-align: center;
+                cursor: pointer;
+                margin: 0 1px;
+                display: block;
+                width: 44px;
+                color: #fff;
+                line-height: 20px;
+            }
+            .a3{
+                border: none;
+            }
+        }
+    }
+}

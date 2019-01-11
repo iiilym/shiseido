@@ -7,7 +7,11 @@ require.config({
         "footer":"js/component/footer",
         "item":"js/component/item",
         "url":"js/component/url",
-        "template": "libs/template-web"
+        "template": "libs/template-web",
+        "minheader":"js/component/minheader",
+        "list-new":"js/component/list-new",
+        "item-detail":"js/component/item-detail",
+        "nav":"js/component/nav"
     },
     //不符合AMD规范的  垫片
     shim:{
