@@ -79,7 +79,7 @@ require(["./requirejs.config"],()=>{
                if(Number(num.html())>1){           
                 num.html(Number(num.html())-1)              
                }
-        
+            })
         // allPrice();
 
 
