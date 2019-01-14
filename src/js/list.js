@@ -3,10 +3,12 @@ require(["./requirejs.config"], () => {
 	
 	require(["jquery", "item","url","header","footer"], ($,item,url) => {
 		 item.init(url.baseUrlRap+"/list");
+		//  item.add();
 		 class List{
 			constructor(){
 				this.nav();
-				this.select();
+				 this.select();
+				// this.add();
 			}
 			nav(){
 				$(".select_1").mouseenter(function(){
@@ -26,18 +28,28 @@ require(["./requirejs.config"], () => {
 			   })
 			 }
 			select(){
+				//点击旁边的分类出来选项
 				$(".li_bottom_select_1").on("click",function(){
 					$(".li_bottom_select_container1").css({"display":"block"});
-			  })
-			  $(".li_bottom_select_1").on("mouseleave",function(){
+				})
+				$(".li_bottom_select_1").on("mouseleave",function(){
 					$(".li_bottom_select_container1").css({"display":"none"});
-			  })
+				})
+				$(".li_bottom_select_2").on("click",function(){
+					$(".li_bottom_select_container2").css({"display":"block"});
+				})
+				$(".li_bottom_select_2").on("mouseleave",function(){
+					$(".li_bottom_select_container2").css({"display":"none"});
+				})
+				$(".li_bottom_select_3").on("click",function(){
+					$(".li_bottom_select_container3").css({"display":"block"});
+				})
+				$(".li_bottom_select_3").on("mouseleave",function(){
+					$(".li_bottom_select_container3").css({"display":"none"});
+				})
 			}
-			// scroll(){
-			// 	if(){
-					
-			// 	}
-			// }
+
+			
 		 }
 		 
 		 return new List();

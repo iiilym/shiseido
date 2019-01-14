@@ -67,6 +67,7 @@
                 table{
                     width: 980px;
                     height: auto;
+                    border-collapse:collapse;
                     thead{
                         width: 980px;
                         height: 47px;
@@ -84,24 +85,104 @@
                     tbody{
                         width: 980px;
                         min-height: 60px;
+                        .tbody_tr{
+                            padding: 3px 0;
+                            height: 114px;
+                            border-bottom:  1px solid #7c0d02;
+                            .tbody_td{
+                                padding: 20px 0;
+                                text-align: center;
+                                .span{
+                                    text-align: center;
+                                }
+                            }
+                            .tbody_td1{
+                                text-align: center;
+                                .moneyAll{
+                                    display: block;
+                                    padding: 0 50px;
+                                    color: #670205;
+                                    font-size: 18px;
+                                }
+                                img{
+                                    border: 1px solid;
+                                    width: 107px;
+                                    height: 107px;
+                                }
+                            }
+                            .tbody_td2{
+                                text-align: center;
+                            }
+                            .tbody_td4{
+                                // position: relative;
+                                .word_1{
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    // margin-left: 41px;
+                                    // position: absolute;
+                                    // top: 63px;
+                                    // left: 11px;
+                                    a{
+                                        display: block;
+                                        width: 27px;
+                                        height: 26px;
+                                        border: 1px solid #a9a9a9;
+                                        text-align: center;
+                                        line-height: 26px;
+                                       
+                                    }
+                                    .jian{
+                                        background: url(/static/img/jian.jpg) no-repeat;
+                                    }
+                                    .jia{
+                                        background: url(/static/img/jia.jpg) no-repeat;
+                                    }
+                                    .input{
+                                        height: 26px;
+                                        width: 68px;
+                                        line-height: 21px;
+                                        padding: 0;
+                                        margin: 0;
+                                        vertical-align: middle;
+                                        border-width: 1px 0;
+                                        border-style: solid;
+                                        border-color: #a9a9a9;
+                                        text-align: center;
+                                    }
+                                }
+                            }
+                            .tbody_td5{
+                                height: 113px;
+                                text-align: -webkit-center;
+                                line-height: 33px;
+                                .td_a{
+                                    display: block;
+                                    width: 90px;
+                                    height: 24px;
+                                    color: #000;
+                                }
+                            }
+                        }
+                       
                     }
                     tfoot{
                         width: 980px;
                         height: 70px;
+                        
                         tr{
-                            
-                            display: flex;
-                            justify-content: space-between;
+                            width: 980px;
+                            // display: flex;
+                            // justify-content: space-between;
                             align-self: center;
                             td{
                                 font-size: 14px;
                                 color: #000;
-                                display: flex;
-                                justify-content: flex-end;
-                                align-self: center;
-                                vertical-align: middle;
+                                padding: 20px 2px 18px 5px;
+                               .goPayment{margin-left: 20px}
                                 a{
                                     display: block;
+                                    float: right;
                                                                 
                                     text-align: center; 
                                     font-size: 14px;                              
@@ -131,7 +212,9 @@
                                 text-align: right;
                             }
                         }
-
+                        .tfoof_tr{
+                            width: 980px;
+                        }
                     }
                 }
             }

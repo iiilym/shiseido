@@ -21,6 +21,28 @@ require(["./requirejs.config"], () => {
                         // console.log(res.res_body.img);
                        
                        $(".de_bottom_detail_t").html(html);
+                       
+                    //    console.log(Number($("#money").html()));
+                       $(".de_bottom_detail").on("click",".jia",function(event){
+                        let num=$(".input");
+                        let price=Number($("#money").html());
+                        price+=price;
+                       num.html(Number(num.html())+1);//数量
+                        // console.log(11);
+                       $("#money").html(price);//总价
+                    })
+                    $(".de_bottom_detail").on("click",".jian",function(event){
+                        let num=$(".input");
+                       if(Number(num.html())>1){           
+                        let price=Number($("#money").html());
+                         price=Number($("#money").html())/Number(num.html());
+                        // console.log(price);
+                        num.html(Number(num.html())-1)
+                        $("#money").html(price);//总价
+                        
+                       }
+                       
+                    })
                    }
                    
                 }
@@ -48,39 +70,73 @@ require(["./requirejs.config"], () => {
         })
 
         //数量加减
-        let num=$(".input");
-       
-        var count=1;
         
-        $(".jia").on("click",function(){
-            let price=Number($("#money").html());
-            price+=100;
-           num.html(Number(num.html())+1);//数量
         
-           $("#money").html(price);//总价
-        })
-        $(".jian").on("click",function(){
-           if(Number(num.html())>1){
-            let price=Number($("#money").html());
-            price-=100;
-            num.html(Number(num.html())-1)
-            $("#money").html(price);//总价
+        //  console.log(Number($("#money").html()));
+        // $(".de_bottom_detail").on("click",".jia",function(event){
+        //     let num=$(".input");
+        //     let price=Number($("#money").html());
+        //     price+=price;
+        //    num.html(Number(num.html())+1);//数量
+        //     console.log(11);
+        //    $("#money").html(price);//总价
+        // })
+        // $(".de_bottom_detail").on("click",".jian",function(event){
+        //     let num=$(".input");
+        //    if(Number(num.html())>1){           
+        //     let price=Number($("#money").html());
+        //      price-=price/(Number(num.html())-1);
+        //     console.log(price);
+        //     num.html(Number(num.html())-1)
+        //     $("#money").html(price);//总价
             
-           }
+        //    }
            
-        })
+        // })
 
         //点击购买跳转到购物车
         $(".buy_now").on("click",function(){
             location.href="/html/chart.html";
         })
+        
 
         //点击加入购物车
-        // $(".addchart_now addChart").on("click",function(){
-        //     // $("<p></p>").append( $(".detail_addchart_bottom" ));
-        //     // $("p").css({""})
-           
-        // })
+        $(".de_bottom_detail").on("click",".addChart",function(event){
+            // $("<p></p>").append( $(".detail_addchart_bottom" ));
+            // $("p").css({""})
+            event.stopPropagation();
+           //获取商品信息
+           var obj={
+               title:$(".detailTitle").html(),
+               price:$("#money").html(),
+               img:$(".detailImg").attr("src"),
+               num:1
+           };
+           //判断是否已经存了cookie，存了就将json转为js,不存在数组为空
+           var arr=$.cookie("cart") ? JSON.parse($.cookie("cart")) : [];
+           //判断是否重复，重复就数量加一，不重复就存进数组
+           var index;
+        //    console.log("arr",arr)
+           var isExist=arr.some(function(item,i){
+               index=i;
+            //    console.log(2222222222)
+            //    console.log(item.title)
+               return item.title===obj.title;
 
+           })
+           if(isExist){
+               obj.num+=1;
+            //    console.log(33333333)
+           }else{
+
+                // console.log("obj",obj)
+                arr.push(obj);
+           }
+           $.cookie("cart",JSON.stringify(arr),{expires:7,path: "/"});
+		   console.log("obj1",$.cookie("cart"));
+        })
+
+
+        
 	})
 })

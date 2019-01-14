@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/chart.css">
-    <script src="/libs/require/require.js" data-main="/js/chart.js"></script>
+    <link rel="stylesheet" href="/css/cart.css">
+    <script src="/libs/require/require.js" data-main="/js/cart.js"></script>
 </head>
 <body>
     <div id="minheader"></div>
@@ -32,19 +32,29 @@
                         <thead>
                             <tr>
                                 <th>商品</th>
-                                <th>单价(元)</th>
+                                <th>名称</th>
                                 <th>数量</th>
-                                <th>小计(元)</th>
+                                <th>价格(元)</th>
                                 <th>操作</th>
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            <tr class="tbody_tr">
+                                <!-- <td><input type="checkbox" class="check"/></td> -->
+                                <td class="tbody_td tbody_td1"><a href=""><img src="/static/img/fc8bf101a5fffdde3f6929885cdb94f56527d57d.png"></a> </td>
+                                <td class="tbody_td tbody_td2"><span>红妍肌活精华露 缎造物语限量版</span></td>
+                                <td class="tbody_td tbody_td3"><span>1</span></td>
+                                <td class="tbody_td tbody_td4"><span class="word_1"><a href="javascript:;" class="jian"></a><div class="input" >￥100</div><a href="javascript:;" class="jia"></a></span></td>
+                                <td class="tbody_td tbody_td5">
+                                    <a href="javascript:;" class="td_a td_a1 td_a td_a">删除</a>
+                                    <a href="javascript:;" class="td_a td_a2 td_a td_a">收藏</a>
+                                </td>
+                            </tr>
                         </tbody>
                         <tfoot>
                             <tr class="tfoof_tr">
-                                <td class="tfoot_td1">总价(免运费)：￥<b id="moneyAll"></b></td>
-                                <td class="tfoot_td2"><a href="/index.html" class="continueShopping">继续购物</a><a href="/html/payment.html" class="goPayment">去结算</a></td>
+                                <td colspan="2" class="tfoot_td1">总价(免运费)：￥<b id="moneyAll"></b></td>
+                                <td colspan="2" class="tfoot_td2"><a href="/index.html" class="continueShopping">继续购物</a><a href="/html/payment.html" class="goPayment">去结算</a></td>
                             </tr>
                         </tfoot>
                     </table>                        

@@ -58,10 +58,10 @@
                             
                             <div class="de_bottom_detail_t">
                                 <script type="text/html" id="detail-template">                                                                      
-                                    <div class="de_image"><img src="{{detail.img}}" ></div>
+                                    <div class="de_image"><img src="{{detail.img}}" class="detailImg"></div>
                                     <div class="de_message">
                                             <div class="de_message_top">
-                                                <h3>{{detail.title}}</h3>
+                                                <h3 class="detailTitle">{{detail.title}}</h3>
                                                 <div class="de_message_share"><a href="javascript:;"></a></div>
                                             </div>                                    
                                             <h4>{{detail.capacity}}ml</h4>
@@ -70,11 +70,22 @@
                                                 <span>功效：</span>{{detail.effect}}<br><br>
                                                 <span>使用方法：</span>{{detail.usage}}
                                             </div>
-                                        </div>                                
+                                        </div>    
+                                        <div class="detail_addchart">
+                                                <div class="detail_addchart_top">
+                                                    <!-- <span class="word">数量：<span class="word_1"><a href="javascript:;" class="jian"></a><div class="input" >1</div><a href="javascript:;" class="jia"></a></span></span> -->
+                                                    <span class="word">价格：<span class="money">￥<span class="money" id="money">{{detail.price}}</span></span>
+                                                </div>
+                                                <div class="detail_addchart_bottom">
+                                                    <button class="addchart_now addChart">加入购物车</button>
+                                                    <button class="buy_now">立即购买</button>
+                                                    <a href="javascript:;" class="shoucang">加入收藏</a>
+                                                </div>
+                                            </div>                            
                                 </script>
                             </div>
 
-                            <div class="detail_addchart">
+                            <!-- <div class="detail_addchart">
                                 <div class="detail_addchart_top">
                                     <span class="word">数量：<span class="word_1"><a href="javascript:;" class="jian"></a><div class="input" >1</div><a href="javascript:;" class="jia"></a></span></span>
                                     <span class="word">价格：<span class="money">￥<span class="money" id="money">100</span></span>
@@ -84,7 +95,7 @@
                                     <button class="buy_now">立即购买</button>
                                     <a href="javascript:;" class="shoucang">加入收藏</a>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="de_bottom_detail_m">
                         
                                 <a href="javascript:;" class="chart_bottom_a1">官方正品保证</a>

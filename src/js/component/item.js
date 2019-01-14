@@ -23,6 +23,7 @@ define(["jquery","template"],($,template)=>{
                         // console.log(html);
                         
                         $("#list_container_template .list_item").html(html);
+
                     }
                 }
             })
@@ -30,5 +31,19 @@ define(["jquery","template"],($,template)=>{
         
         
     }
+    // Item.prototype.add=function(){
+    //     //点击加入购物车
+	// 			$(".item").each(function(){
+	// 				$(this).on("click",".addChart",function(){
+	// 					// var title=$(this, ".chartTitle").html();
+	// 					// // var title=$(".chartTitle").html();
+	// 					// // var price=$(".chartPrice").html();
+	// 					// // var count=1;
+	// 					// console.log(title);	
+	// 					alert(123);					
+	// 				})
+	// 				// alert($(this).html());
+	// 			})
+    // }
     return new Item();
 })

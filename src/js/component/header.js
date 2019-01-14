@@ -12,11 +12,13 @@ define(["jquery","cookie"],($)=>{
                     resolve();
                 })
             }) .then(()=>{
-                 
-                 this.chart();
+                 this.register();
+                 this.cart();
                  this.logo();
                  this.nav();
                  this.login();
+                 this.exit();
+                 this.productNum();
              })
          }
          register(){
@@ -24,9 +26,9 @@ define(["jquery","cookie"],($)=>{
                 $("#register").attr({ "href": "javascript:;"});
             })
         }
-         chart(){
-             $(".chart").on("click",function(){
-                 location.href="/html/chart.html";
+         cart(){
+             $(".cart").on("click",function(){
+                 location.href="/html/cart.html";
              })
          }
          logo(){
@@ -42,13 +44,28 @@ define(["jquery","cookie"],($)=>{
                 // $("#register").css({ "dispaly": "none"});
                 
                 $(".register").css({"display":"flex","justify-content":"flex-end","align-item":"center"});
-                $("#login").css({ "dispaly": "block"});
+                $("#login").css({ "display": "block"});
+                
             }
-            this.register();
+            // this.register();
          }
+         exit(){
+            $("#login").on("click",function(){
+                if(confirm("真的要退出吗？")){
+                    location.href="/html/register.html"
+                    $.cookie("username", username_1, {expires:-1,path: "/"});
+                }
+            })
+         }
+
+         //购物车数量
+        //  productNum(){
+        //      console.log(arr.length);
+        //     // $("b").html(arr.length);
+        //  }
+
          nav(){
             $(".select_1").mouseenter(function(){
-                $(".select_1").css({"box-shadow": "0 0 5px #888"});
                  $(".nav_select").show();
             })
             
@@ -57,19 +74,14 @@ define(["jquery","cookie"],($)=>{
         //         // $(".select_1").css({"border-left":"none","box-shadow": "0 0 5px #888"});
         //    })
             $(".nav_select").mouseleave(function(){
-                $(".nav_select").hide();
-                $(".select_1").css({"box-shadow": "none"});
+                $(".nav_select").hide()
            })
             $(".select_2").mouseenter(function(){
             $(".nav_select").show();
-            $(".select_2").css({"box-shadow": "0 0 5px #888"});
+           
            })
-           $(".select_2").mouseleave(function(){
-            $(".nav_select").hide();
-       })
            $(".nav_select").mouseleave(function(){
             $(".nav_select").hide();
-            $(".select_2").css({"box-shadow": "none"});
            })
          }
     }
