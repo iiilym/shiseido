@@ -531,6 +531,7 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+       
         li{
             display: block;
             width: 64px;
@@ -539,6 +540,24 @@
             text-align: center;
             margin: 0 auto;
             font-size: 15px;
+            .img{
+                display: none;
+                width: 80px;
+                border: 0;
+                // vertical-align: top;
+                font-size: 0;
+                line-height: 0;
+                overflow: hidden;
+                position: absolute;
+            }
+            .img1{
+                top:-1px;
+                right: 63px;;
+            }
+            .img2{
+                top:68px;
+                right: 63px;;
+            }
             .a{
                 padding: 15px 0px;
                 text-align: center;
@@ -552,17 +571,18 @@
                 border: none;
             }
             
+            .about{
+                position: relative;
+            }
+            .call{
+                position: relative;
+            }
         }
         #toTop{
             background-color: #000000;
             .a4{
                 border: none;
-                // .toTop_img{
-                //     display: block;
-                //     height: 8px;
-                //     width: 24px;
-                //     vertical-align: middle;
-                // }
+               
             }
         }
         .li3{

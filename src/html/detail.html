@@ -9,7 +9,7 @@
 	<script type="text/javascript" src="/libs/require/require.js" data-main="/js/detail.js"></script>
 </head>
 <body>
-        <header></header>
+        <header id="header"></header>
         <div class="detail">
                 <div class="de_container">
                     <div class="de_bottom">
@@ -58,7 +58,7 @@
                             
                             <div class="de_bottom_detail_t">
                                 <script type="text/html" id="detail-template">                                                                      
-                                    <div class="de_image"><img src="{{detail.img}}" class="detailImg"></div>
+                                    <div class="de_image"><img src="{{detail.img}}" class="detailImg" data-id="{{detail.id }}"></div>
                                     <div class="de_message">
                                             <div class="de_message_top">
                                                 <h3 class="detailTitle">{{detail.title}}</h3>
@@ -120,10 +120,10 @@
             <footer></footer>
             <div id="fixDiv">
                 <ul id="fixUl">
-                    <li class="call"><a href="javascript:;" class="a">电话咨询</a></li>
-                    <li class="about"><a href="javascript:;" class="a a2">关注我们</a></li>
+                    <li class="call"><a href="javascript:;" class="a">电话咨询</a><img src="/static/img/call.png" class=" img img1"></li>
+                    <li class="about"><a href="javascript:;" class="a a2">关注我们</a><img src="/static/img/wxcode.jpg" class="img img2"></li>
                     <li class="li3"><a href="javascript:;" class="a a3"><p class="p">在线客服</p></a></li>
-                    <li id="toTop"><a href="javascript:;" class="a a4"><img src="/static/img/ArrowUp.png" class="toTop_img" ></a></li>
+                    <li id="toTop"><a href="#header" class="a a4"><img src="/static/img/ArrowUp.png" class="toTop_img" ></a></li>
                 </ul>
             </div>
 </body>

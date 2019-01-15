@@ -11,10 +11,12 @@ define(["jquery","cookie"], ()=> {
                 })
             }).then(()=>{
                 
-                this.chart();
+                
                 this.logo();
                 
                 this.login();
+                this.exit();
+                this.count();
             })
         }
         register(){
@@ -22,11 +24,7 @@ define(["jquery","cookie"], ()=> {
                 $("#register").attr({ "href": "javascript:;"});
             })
         }
-        chart(){
-            $(".chart").on("click",function(){
-                location.href="/html/chart.html";
-            })
-        }
+        
         logo(){
             $("#header_logo").on("click",function(){
                 location.reload();
@@ -35,14 +33,37 @@ define(["jquery","cookie"], ()=> {
         login(){
             if($.cookie("username")){
                 $("#register").html($.cookie("username")+"&nbsp;"+"&nbsp;"+"欢迎您");
-                // $("#login").show();
-                //    console.log($.cookie("username")));
-                // $("#register").css({ "dispaly": "none"});
+                
                 
                 $(".register").css({"display":"flex","justify-content":"flex-end","align-item":"center"});
                 $("#login").css({ "dispaly": "block"});
             }
             this.register();
+         }
+         exit(){
+            $("#login").on("click",function(){
+                if(confirm("真的要退出吗？")){
+                   
+                    $("#register").html("登录/注册");
+                    $("#login").css({ "display": "none"});
+                    
+                    $.cookie("username", username_1, {expires:-1,path: "/"});
+                }
+            })
+         }
+         count(){
+           
+            var arr=JSON.parse($.cookie("cart"));
+            var count=0;
+            for(var vlaue of arr){
+                
+                count+=Number(vlaue.num);
+                
+            }          
+            console.log(count);
+            // console.log(arr)
+            // console.log($.cookie("cart"));
+            $(".productNum").html(count);
          }
         }
     

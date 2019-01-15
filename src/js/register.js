@@ -74,8 +74,6 @@ require(["./requirejs.config"],()=>{
                 
                 // $.cookie("username", "username_1", {expires:7,path: "/"});
                 location.href = "/index.html";
-                // $("#register").hide();
-                // $("#login").val("欢迎您"+ username_1).show();
             }
             $.cookie("username", username_1, {expires:7,path: "/"});
             

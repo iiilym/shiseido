@@ -2,7 +2,7 @@
     <div class="dl"> 
     {{each list item i}} 
     <dl>
-        <dt> <a href="/html/detail.html?id={{item.id}}"><img src="{{item.img}}"/></a></dt>
+        <dt> <a href="/html/detail.html?{{item.id}}"><img src="{{item.img}}"/></a></dt>
         <dd>
             <a href="/html/detail.html?id={{item.id}}">{{item.title}}</a>
             {{if item.capacity}}

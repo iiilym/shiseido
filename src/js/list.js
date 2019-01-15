@@ -7,6 +7,7 @@ require(["./requirejs.config"], () => {
 		 class List{
 			constructor(){
 				this.nav();
+				this.toTop();
 				 this.select();
 				// this.add();
 			}
@@ -46,6 +47,24 @@ require(["./requirejs.config"], () => {
 				})
 				$(".li_bottom_select_3").on("mouseleave",function(){
 					$(".li_bottom_select_container3").css({"display":"none"});
+				})
+			}
+			toTop(){
+				$(".call").on("mouseenter",function(){
+					$(".img1").css({"display":"block"});
+					
+				})
+				$(".call").on("mouseleave",function(){
+					$(".img1").css({"display":"none"});
+					
+				})
+				$(".about").on("mouseenter",function(){
+					$(".img2").css({"display":"block"});
+					
+				})
+				$(".about").on("mouseleave",function(){
+					$(".img2").css({"display":"none"});
+					
 				})
 			}
 

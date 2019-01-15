@@ -1,127 +1,110 @@
 require(["./requirejs.config"],()=>{
     //引入index需要依赖的模块
-    require(["jquery","item-detail","url","cookie","minheader","footer"],($,Item,url)=>{
+    require(["jquery","item-detail","url","minheader","cookie","footer"],($,Item,url)=>{
         Item.init(url.baseUrlRap+"/seen","#seen_template");
         
         //用cookie拼接tbody
          var arr=JSON.parse($.cookie("cart"));
-        console.log(arr);
+        // console.log(arr);
         var str="";
         for(var value of arr){
-            str+=`<tr class="tbody_tr">
+            str+=`<tr class="tbody_tr id="${value.id}">
                     <td class="tbody_td tbody_td1"><a href=""><img src="${value.img}"></a> </td>
                     <td class="tbody_td tbody_td2"><span>${value.title}</span></td>
-                    
+                    <td class="tbody_td tbody_td3 prices">${value.price}</td>
                     <td class="tbody_td tbody_td4"><span class="word_1"><a href="javascript:;" class="jian"></a><div class="input" >${value.num}</div><a href="javascript:;" class="jia"></a></span></td>
-                    <td class="tbody_td tbody_td3"><span>${value.price}</span></td>
+                    <td class="tbody_td tbody_td3"><span class="subtotal">${value.price}</span></td>
                     <td class="tbody_td tbody_td5">
-                        <a href="javascript:;" class="td_a td_a1 td_a td_a">删除</a>
-                        <a href="javascript:;" class="td_a td_a2 td_a td_a">收藏</a>
+                        <a href="javascript:;" class="td_a td_a1">删除</a>
+                        <a href="javascript:;" class="td_a td_a2">收藏</a>
                     </td>
                 </tr>`            
         }
             $("tbody").html(str);
             $("#moneyAll").html();
-        //      //数量加减
-        // let num=$(".input");
        
-        // var count=1;
-        
-        // $(".jia").on("click",function(){
-        //     let price=Number($("#money").html());
-        //     price+=100;
-        //    num.html(Number(num.html())+1);//数量
-        
-        //    $("#money").html(price);//总价
-        // })
-        // $(".jian").on("click",function(){
-        //    if(Number(num.html())>1){
-        //     let price=Number($("#money").html());
-        //     price-=100;
-        //     num.html(Number(num.html())-1)
-        //     $("#money").html(price);//总价
             
-        //    }
-           
-        // })
-        // $(".de_bottom_detail").on("click",".jia",function(event){
-        //     let num=$(".input");
-        //     let price=Number($("#money").html());
-        //     price+=price;
-        //    num.html(Number(num.html())+1);//数量
-        //     console.log(11);
-        //    $("#money").html(price);//总价
-        // })
-        // $(".de_bottom_detail").on("click",".jian",function(event){
-        //     let num=$(".input");
-        //    if(Number(num.html())>1){           
-        //     let price=Number($("#money").html());
-        //      price=Number($("#money").html())/Number(num.html());
-        //     console.log(price);
-        //     num.html(Number(num.html())-1)
-        //     $("#money").html(price);//总价
-            
-        //    }
-           
-        // })
-
-        // allPrice();
-        console.log(arr.length);
-        $("b").html(arr.length);
+        // console.log(arr.length);
+        
         //点击加减
         $("table").on("click",".jia",function(){
-            let num=$(".input");
-           num.html(Number(num.html())+1);//数量
-            console.log(11)
-        })
-        $("table").on("click",".jian",function(event){
-                let num=$(".input");
-               if(Number(num.html())>1){           
-                num.html(Number(num.html())-1)              
-               }
+            //找到当前行
+            var price=$(this).parents(".tbody_tr").find(".tbody_td3").html();
+            var num=$(this).parents(".tbody_tr").find(".input").html();
+        //    num.html(Number(num.html())+1);//数量
+           $(this).parents(".tbody_tr").find(".input").html(Number(num)+1);
+           $(this).parents(".tbody_tr").find(".subtotal").html((Number(num)+1)*price);
+           //修改cookie
+           arr=JSON.parse($.cookie("cart"));
+            $(".input").each(function(i,item){
+                arr[i].num=$(item).html();
             })
-        // allPrice();
+            $.cookie("cart",JSON.stringify(arr),{path:"/",expires:3});
+            fn();
+        //    console.log(11)
+           
+        })
+        $("table").on("click",".jian",function(){
+            //找到当前行
+            var price=$(this).parents(".tbody_tr").find(".tbody_td3").html();
+            var num=$(this).parents(".tbody_tr").find(".input").html();
+        //    num.html(Number(num.html())+1);//数量
+        if(Number(num)>1){
+            $(this).parents(".tbody_tr").find(".input").html(Number(num)-1);
+            $(this).parents(".tbody_tr").find(".subtotal").html((Number(num)-1)*price);
+        }         
+           //修改cookie
+           arr =JSON.parse($.cookie("cart"));
+            $(".input").each(function(i,item){
+                c[i].num=$(item).html();
+            })
+            $.cookie("cart",JSON.stringify(arr),{path:"/",expires:3});
+            fn();
+        //    console.log(11)
+        })
 
+        //点击删除
+        $("table").on("click",".td_a1",function(){
+            if(confirm("真的要删除吗？")){
+                $(this).parents(".tbody_tr ").remove();
+            let id=$(this).parents("tbody").attr("id");
+            // cartArr=JSON.parse($.cookie("cart"));
+            arr =JSON.parse($.cookie("cart"));
+            for(let i=0;i<arr.length;i++){
+                if(arr[i].id===id){
+                    arr.splice(i,1);
+                    break;
+                }
+            }
+            
+            }
+            $.cookie("cart",JSON.stringify(arr),{path:"/",expires:3});   
+            fn();
+        })
+        //计算价格
 
-//         table.onclick = function(e){
-//             e = e || event;
-//             //找到事件源
-//             var target = e.target || e.srcElement;
-//             //找到当前tr
-//             var tr = target.parentNode.parentNode;
-//             //判断事件源
-//             if(target.className === "jia"){
-//                 let num=$(".input");
-//                 num.html(Number(num.html())+1);//数量
-                
-//                 allPrice();
-//             }else if(target.className === "jian"){
-//                 let num=$(".input");
-//                    if(Number(num.html())>1){           
-//                     num.html(Number(num.html())-1)
-//                 calcPrice();
-//             // }else if(target.className === "td_a1"){
-//             //     if(confirm("你真的不要了吗？")){	
-//             //         tr.parentNode.removeChild(tr);
-//             //         allPrice();
-//             //     }
-//             // }                         
-//         }
-        
-//         //计算价格
-//         // function allPrice(){
-//         //     var sum = 0;
-//         //     //找到被选中的那些行，然后把这些行的单价X数量，累加
-//         //     var aTr = $("tr", tbody);
-//         //     for(var j = 0; j < aTr.length; j++){
-//         //             var price = Number(aTr[2].html());
-//         //             var num = Number(atr[3].html());
-//         //             sum += price*num;
-                
-//         //     }
-//         //     $("#moneyAll").html = sum + "元";
-//         //     }
-//     }
+fn();
+function  fn(){
+           
+            let sum=0;
+            var atr = $("tbody .tbody_tr");
+            atr.each(function(i,item){
+               let prices = Number($(item).find(".prices").text());
+               var input_num = Number($(item).find(".input").text());
+                sum+= prices*input_num;
+               
+            //    console.log(1,sum)
+               $(item).find(".subtotal").text(sum);
 
+            //    console.log(prices,input_num)
+            })
+           
+            $("#moneyAll").text(sum);
+             
+            
+            }
+            fn();
+            // console.log($.cookie("cart"));
+            // console.log(arr)
     })
 })

@@ -18,12 +18,13 @@ define(["jquery","cookie"],($)=>{
                  this.nav();
                  this.login();
                  this.exit();
-                 this.productNum();
+                 this.count();
+                //  this.productNum();
              })
          }
          register(){
             $(".register").on("click","#register",function(){
-                $("#register").attr({ "href": "javascript:;"});
+                $("#register").attr({ "href": "/html/register.html"});
             })
         }
          cart(){
@@ -39,40 +40,34 @@ define(["jquery","cookie"],($)=>{
          login(){
             if($.cookie("username")){
                 $("#register").html($.cookie("username")+"&nbsp;"+"&nbsp;"+"欢迎您");
-                // $("#login").show();
-                //    console.log($.cookie("username")));
-                // $("#register").css({ "dispaly": "none"});
+               
                 
                 $(".register").css({"display":"flex","justify-content":"flex-end","align-item":"center"});
                 $("#login").css({ "display": "block"});
                 
             }
-            // this.register();
+           
          }
          exit(){
             $("#login").on("click",function(){
                 if(confirm("真的要退出吗？")){
-                    location.href="/html/register.html"
+                   
+                    $("#register").html("登录/注册");
+                    $("#login").css({ "display": "none"});
+                   
                     $.cookie("username", username_1, {expires:-1,path: "/"});
                 }
             })
          }
 
-         //购物车数量
-        //  productNum(){
-        //      console.log(arr.length);
-        //     // $("b").html(arr.length);
-        //  }
+         
 
          nav(){
             $(".select_1").mouseenter(function(){
                  $(".nav_select").show();
             })
             
-        //     $(".select_1").mouseleave(function(){
-        //         $(".nav_select").hide();
-        //         // $(".select_1").css({"border-left":"none","box-shadow": "0 0 5px #888"});
-        //    })
+        
             $(".nav_select").mouseleave(function(){
                 $(".nav_select").hide()
            })
@@ -83,6 +78,20 @@ define(["jquery","cookie"],($)=>{
            $(".nav_select").mouseleave(function(){
             $(".nav_select").hide();
            })
+         }
+         count(){
+           
+            var arr=JSON.parse($.cookie("cart"));
+            var count=0;
+            for(var vlaue of arr){
+                
+                count+=Number(vlaue.num);
+                
+            }          
+            console.log(count);
+            // console.log(arr)
+            // console.log($.cookie("cart"));
+            $(".productNum").html(count);
          }
     }
     return new Header();

@@ -5,14 +5,14 @@
             <!-- 用来遍历循环 -->
             {{each list item i}}
             <div class="item">
-                    <div class="img chartImg">
-                        <a href="/html/detail.html?id={{item.id}}"><img src="{{item.img}}"></a>
+                    <div class="img chartImgs" data-main="{{item.id}}">
+                        <a href="/html/detail.html?{{item.id}}" class="chartId"><img src="{{item.img}}" class="chartImg"></a>
                     </div>
                     <p class="product_title  chartTitle">{{item.title}}</p>
                     <p class="product_capacity">{{item.capacity}}</p>
-                    <p class="product_price chartPrice">￥{{item.price}}</p>
+                    <p class="product_price ">￥<span class="chartPrice">{{item.price}}</span></p>
                     <div class="add_chart addChart">加入购物车</div>
-                    <div class="detail"><a href="/html/detail.html?id={{item.id}}">详情</a></div>   
+                    <div class="detail"><a href="/html/detail.html?{{item.id}}">详情</a></div>   
                 </div>
                 {{/each}}
         </script>

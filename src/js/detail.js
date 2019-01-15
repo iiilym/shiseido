@@ -69,6 +69,24 @@ require(["./requirejs.config"], () => {
             $(".de_bottom_select_container3").css({"display":"none"});
         })
 
+
+
+        $(".call").on("mouseenter",function(){
+            $(".img1").css({"display":"block"});
+            
+        })
+        $(".call").on("mouseleave",function(){
+            $(".img1").css({"display":"none"});
+            
+        })
+        $(".about").on("mouseenter",function(){
+            $(".img2").css({"display":"block"});
+            
+        })
+        $(".about").on("mouseleave",function(){
+            $(".img2").css({"display":"none"});
+            
+        })
         //数量加减
         
         
@@ -106,12 +124,17 @@ require(["./requirejs.config"], () => {
             // $("p").css({""})
             event.stopPropagation();
            //获取商品信息
+           
+           let arrSearch=location.search.slice(1);
+        
+        //    console.log(arrSearch[1]);
            var obj={
+               id:arrSearch[1],
                title:$(".detailTitle").html(),
                price:$("#money").html(),
                img:$(".detailImg").attr("src"),
                num:1
-           };
+           };console.log(arrSearch);
            //判断是否已经存了cookie，存了就将json转为js,不存在数组为空
            var arr=$.cookie("cart") ? JSON.parse($.cookie("cart")) : [];
            //判断是否重复，重复就数量加一，不重复就存进数组
